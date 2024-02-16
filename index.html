@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Title</title>
     <!-- CSS files -->
-    <link rel="stylesheet" href="style.CSS">
+    <link rel="stylesheet" href="mySite.css">
     <!-- JavaScript files -->
     <script src="script.js" defer></script>
 </head>
@@ -22,7 +22,7 @@
         <h2>A Little About Me: </h2>
     </div>
     <main>
-
+        
 
         <!-- Main content -->
         <article>
@@ -83,7 +83,23 @@
 
           <!-- Options will be added here -->
       </select>
-      <button onclick="setAlarm()">Start Alarm</button>
+      <button id="startAlarmBtn">Start Alarm</button> 
+      <div id="displayArea">
+        
+
+      </div>
+      <div id="displayArea1">
+          <div class="number-boxes-container">
+              <div class="number-box" id="box1"></div>
+              <div class="number-box" id="box2"></div>
+              <div class = "colon-container"> 
+                  <p3>.      .</p3>
+              </div>
+             
+              <div class="number-box" id="box3"></div>
+              <div class="number-box" id="box4"></div>
+          </div>
+      </div>
       <!-- Add your alarm setting inputs and confirm button here -->
     </div>
   </div>
