@@ -26,6 +26,92 @@ function populateDropdown(dropdown, max) {
 }
 
 
+
+
+// Function to handle setting an alarm
+function setAlarm() {
+    console.log("Setting an alarm...");
+}
+
+// Get the modal
+var alarmModal = document.getElementById('alarmModal');
+
+// Get the button that opens the modal
+var setAlarmBtn = document.getElementById('setAlarmBtn');
+
+// Get the <span> element that closes the modal
+var closeAlarmSpan = document.getElementsByClassName('closeAlarm')[0];
+
+// When the user clicks the button, open the modal
+setAlarmBtn.onclick = function() {
+    populateTimeDropdowns();
+    alarmModal.style.display = "block";
+
+}
+
+closeAlarmSpan.onclick = function() {
+
+    alarmModal.style.display = "none";
+}
+
+function getAlarmInfo(){
+    var alarmHours = parseInt(document.getElementById('alarmHours').value, 10);
+    var alarmMinutes = parseInt(document.getElementById('alarmMinutes').value, 10);
+    document.getElementById('alarmInfoBar').style.display = 'block';
+    if (alarmMinutes < 10){
+        document.getElementById("alarmTimeDisplay").textContent = alarmHours + ":0" + alarmMinutes + " o'clock";
+    } else {
+        document.getElementById("alarmTimeDisplay").textContent = alarmHours + ":" + alarmMinutes + " o'clock";
+
+    }
+
+
+    startAlarm(alarmHours, alarmMinutes);
+}
+
+function startAlarm(hours, minutes){
+
+    
+
+
+}
+
+// Function to handle setting a timer
+function setTimer() {
+    console.log("Setting a timer...");
+    // Placeholder for setting a timer functionality
+    // This could involve showing an input for the user to specify the timer duration
+}
+var timerModal = document.getElementById('timerModal');
+
+// Get the button that opens the modal
+var setTimerBtn = document.getElementById('setTimerBtn');
+
+// Get the <span> element that closes the modal
+var closeTimerSpan = document.getElementsByClassName('closeTimer')[0];
+
+setTimerBtn.onclick = function() {
+    populateTimeDropdowns();
+    timerModal.style.display = "block";
+
+}
+
+closeTimerSpan.onclick = function() {
+    document.getElementById("box1").textContent = " ";
+    document.getElementById("box2").textContent = " ";
+
+    document.getElementById("box3").textContent = " ";
+    document.getElementById("box4").textContent = " ";
+
+    document.getElementById("box5").textContent = " ";
+    document.getElementById("box6").textContent = " ";
+
+    document.getElementById("displayArea").textContent = "";
+
+    timerModal.style.display = "none";
+   
+}
+
 function getTimerInfo(){
 
     var timerSeconds = parseInt(document.getElementById('timerSeconds').value, 10);
@@ -37,9 +123,7 @@ function getTimerInfo(){
 
 }
 function startTimer(hours, minutes, seconds ){
-    
-    //this function is correctly called when the start timer button is pressed
-    
+        
     
     document.getElementById("box1").textContent = Math.floor(hours/10);
     document.getElementById("box2").textContent = Math.floor(hours - (Math.floor(hours/10) * 10));
@@ -74,60 +158,6 @@ function startTimer(hours, minutes, seconds ){
     
 
 
-}
-
-
-// Function to handle setting an alarm
-function setAlarm() {
-    console.log("Setting an alarm...");
-    // Placeholder for setting an alarm functionality
-    // You might later replace this with actual code to set an alarm
-}
-
-
-// Get the modal
-var alarmModal = document.getElementById('alarmModal');
-
-// Get the button that opens the modal
-var setAlarmBtn = document.getElementById('setAlarmBtn');
-
-// Get the <span> element that closes the modal
-var closeAlarmSpan = document.getElementsByClassName('closeAlarm')[0];
-
-// When the user clicks the button, open the modal
-setAlarmBtn.onclick = function() {
-    populateTimeDropdowns();
-    alarmModal.style.display = "block";
-
-}
-closeAlarmSpan.onclick = function() {
-    alarmModal.style.display = "none";
-}
-
-
-// Function to handle setting a timer
-function setTimer() {
-    console.log("Setting a timer...");
-    // Placeholder for setting a timer functionality
-    // This could involve showing an input for the user to specify the timer duration
-}
-var timerModal = document.getElementById('timerModal');
-
-// Get the button that opens the modal
-var setTimerBtn = document.getElementById('setTimerBtn');
-
-// Get the <span> element that closes the modal
-var closeTimerSpan = document.getElementsByClassName('closeTimer')[0];
-
-setTimerBtn.onclick = function() {
-    populateTimeDropdowns();
-    timerModal.style.display = "block";
-
-}
-
-closeTimerSpan.onclick = function() {
-    timerModal.style.display = "none";
-   
 }
 
 
@@ -201,6 +231,7 @@ function initializeButtonListeners() {
     document.getElementById('showClockBtn').addEventListener('click', showClock);
     document.getElementById('showInternationalBtn').addEventListener('click', showInternational);
     document.getElementById('startTimerBtn').addEventListener('click', getTimerInfo);
+    document.getElementById('startAlarmBtn').addEventListener('click', getAlarmInfo)
 }
 
 

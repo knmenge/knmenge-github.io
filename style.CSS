@@ -114,6 +114,9 @@ p3{
     padding-top: 10%;
     font-size: 24px;
 }
+p4{
+    padding-top: 2%;
+}
 
 div1{
     font-weight: bold;
@@ -199,6 +202,20 @@ footer {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
+  #alarmInfoBar {
+    display: flex; /* Makes it a Flexbox container */
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    border: 5px solid black;
+    background-color: lightgrey;
+    /* Removed padding-top and adjusted height */
+    height: 50px; /* Adjusted height to provide enough space for the text */
+}
+
+
+
+
+
 
   .number-boxes-container {
     display: none;
@@ -219,6 +236,28 @@ footer {
     font-size: 24px; /* Large enough for the number to be readable */
     border: 1px solid #ccc; /* Thin border */
     margin-top: 5%;
+}
+
+.number-boxes-container1 {
+
+    display: none;
+    display: flex;
+    justify-content: center; /* Center the boxes horizontally */
+    gap: 2px; /* Add some space between the boxes */
+}
+
+
+.number-box1 {
+    display: none;
+    width: 10px; /* Thin width */
+    height: 20px; /* Adjust based on your needs */
+    background-color: #f0f0f0; /* Light grey background, change as needed */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 18px; /* Large enough for the number to be readable */
+    border: 1px solid #ccc; /* Thin border */
+    margin-top: 2%;
 }
 
 
