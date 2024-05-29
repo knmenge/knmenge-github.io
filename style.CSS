@@ -292,8 +292,8 @@ canvas {
     display: block;
     margin: 10px auto;
     border: 1px solid #000;
-    background: url('path-to-your-image.jpg') no-repeat center center; /* Add your image path here */
-    background-size: cover; /* Adjusts the size of the background image to cover the canvas */
+    background: url('path-to-your-image.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 #score {
@@ -302,18 +302,18 @@ canvas {
     margin-bottom: 10px;
 }
 
-/* Game Over Modal */
+/* Game Over Modal Styling */
 .game-over-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     z-index: 10;
+    margin-left: 175px;
+    margin-top: -210px;
+    display: none;
 }
 
 .game-over-content {
