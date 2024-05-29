@@ -455,7 +455,8 @@ document.addEventListener('DOMContentLoaded', () => {
             pipes.push({
                 x: canvas.width,
                 top: pipeHeight,
-                bottom: canvas.height - pipeHeight - pipeGap
+                bottom: canvas.height - pipeHeight - pipeGap,
+                passed: false // Add this property to check if bird passed the pipe
             });
         }
 
@@ -489,7 +490,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 (bird.y < pipe.top || bird.y + bird.height > canvas.height - pipe.bottom)
             ) {
                 cancelAnimationFrame(animationFrameId);
-                showGameOverModal();
+                document.getElementById('gameOverModal').style.display = 'block';
+                document.getElementById('finalScore').textContent = score; // Update this line
                 return true;
             }
         }
@@ -497,7 +499,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateScore() {
-        score++;
+        pipes.forEach(pipe => {
+            if (!pipe.passed && pipe.x + pipeWidth < bird.x) {
+                score++;
+                pipe.passed = true; // Mark this pipe as passed
+            }
+        });
         document.getElementById('score').textContent = `Score: ${score}`;
     }
 
@@ -522,11 +529,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateBird();
         updatePipes();
         if (!checkCollision()) {
-            if (frame % 90 === 0 && gameStarted) {
-                updateScore();
-            }
+            updateScore();
             frame++;
             animationFrameId = requestAnimationFrame(gameLoop);
+        } else {
+            gameStarted = false;
+            document.getElementById('gameOverModal').style.display = 'block';
         }
     }
 
@@ -536,11 +544,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('startGameBtn').style.display = 'none';
         document.getElementById('gameOverModal').style.display = 'none';
         gameLoop();
-    }
-
-    function showGameOverModal() {
-        document.getElementById('gameOverMessage').textContent = `You Lost! Your score was ${score}`;
-        document.getElementById('gameOverModal').style.display = 'block';
     }
 
     // Event listeners
