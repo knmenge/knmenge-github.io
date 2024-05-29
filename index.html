@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Title</title>
     <!-- CSS files -->
-    <link rel="stylesheet" href="style.CSS">
+    <link rel="stylesheet" href="style.css">
     <!-- JavaScript files -->
     <script src="script.js" defer></script>
+    <script src="languageChecker.js" defer></script> <!-- Add this line for the new functionality -->
 </head>
 <body>
     <header>
@@ -22,8 +22,6 @@
         <h2>A Little About Me: </h2>
     </div>
     <main>
-        
-
         <!-- Main content -->
         <article>
             <p>My name is Kristen Menge, and I am a junior at UW Madison. 
@@ -39,19 +37,16 @@
                 and computer :) ). I have studied Spanish for years, took French 
                 for 5 years, and love to study many others on duolingo from 
                 time to time.
-
-                 </p>
-                 <h2> Education: </h2>
-
-                 <p>
-                    As mentioned above, I am attending UW Madison, I have always been interested in computers, and I switched into
-                    computer engineering / science after my first semester in school. 
-                    I've done many projects for school, and a few smaller ones on my 
-                    own, a few of which I have examples of below.
-                 </p>
-
-                 <h2> Relevant Coursework: </h2>
-        <p> I have taken quite a few computer classes now. I have taken CS 200-400, which teaches all the basics of coding, object oriented programming like Java, and all the basic data structures.  </p>
+            </p>
+            <h2> Education: </h2>
+            <p>
+                As mentioned above, I am attending UW Madison, I have always been interested in computers, and I switched into
+                computer engineering / science after my first semester in school. 
+                I've done many projects for school, and a few smaller ones on my 
+                own, a few of which I have examples of below.
+            </p>
+            <h2> Relevant Coursework: </h2>
+            <p> I have taken quite a few computer classes now. I have taken CS 200-400, which teaches all the basics of coding, object oriented programming like Java, and all the basic data structures.  </p>
             <!-- Article or section content -->
         </article>
         
@@ -62,138 +57,117 @@
             <div>Java, JavaScript, Python, HTML(obviously), C++, C, CSS, Matlab, Linux</div>
             <div1>Tools:</div1>
             <div>Eclipse, IntelliJ, Visual Studio Code, Github, ModelSim</div>
-            <div1>Clubs: </div1>
-            <div>Kappa Eta Kappa (proffesional engineering fraternity), Cybersecurity Club, SWE (Society of Women Engineers)</div>
+            <div1>Clubs:</div1>
+            <div>Kappa Eta Kappa (professional engineering fraternity), Cybersecurity Club, SWE (Society of Women Engineers)</div>
         </aside>
     </main>
 
     <!-- The Modal -->
     <div id="alarmModal" class="alarmModal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="closeAlarm">&times;</span>
-      <h2>Set Alarm</h2>
-      <p>Alarm settings go here...</p>
-      <label for="alarmHours">Hours:</label>
-      <select id="alarmHours">
-      </select>
-      <!-- Minute Dropdown -->
-      <label for="alarmMinutes">Minutes:</label>
-      <select id="alarmMinutes">
-         
-        
-      </select>
-      <button id="startAlarmBtn">Start Alarm</button> 
-      <div id="displayArea">
-        
-
-      </div>
-      <div id="alarmInfoBar" style="display: none;">
-
-        <!-- Placeholder for alarm information -->
-        <p id="alarmInfoText">Alarm set for: <span id="alarmTimeDisplay"></span></p>
-    </div>
-      
-      <!-- Add your alarm setting inputs and confirm button here -->
-    </div>
-  </div>
-
-  <div id="timerModal" class="timerModal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="closeTimer">&times;</span>
-      <h2>Set Timer</h2>
-      <p>Timer settings go here...</p>
-      <label for="timerHours">Hours:</label>
-      <select id="timerHours">
-          <!-- Options will be added here -->
-          
-      </select>
-      <!-- Minute Dropdown -->
-      <label for="timerMinutes">Minutes:</label>
-      <select id="timerMinutes">
-      </select>
-
-      <label for="timerSeconds">Seconds:</label>
-      <select id="timerSeconds">
-      </select>
-
-
-      <button id="startTimerBtn">Start Timer</button>      <!-- Add your alarm setting inputs and confirm button here -->
-    <div id="displayArea">
-        
-
-    </div>
-    <div id="displayArea1">
-        <div class="number-boxes-container">
-            <div class="number-box" id="box1"></div>
-            <div class="number-box" id="box2"></div>
-            <div class = "colon-container"> 
-                <p3>.      .</p3>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="closeAlarm">&times;</span>
+            <h2>Set Alarm</h2>
+            <p>Alarm settings go here...</p>
+            <label for="alarmHours">Hours:</label>
+            <select id="alarmHours"></select>
+            <!-- Minute Dropdown -->
+            <label for="alarmMinutes">Minutes:</label>
+            <select id="alarmMinutes"></select>
+            <button id="startAlarmBtn">Start Alarm</button> 
+            <div id="displayArea"></div>
+            <div id="alarmInfoBar" style="display: none;">
+                <!-- Placeholder for alarm information -->
+                <p id="alarmInfoText">Alarm set for: <span id="alarmTimeDisplay"></span></p>
             </div>
-           
-            <div class="number-box" id="box3"></div>
-            <div class="number-box" id="box4"></div>
-            <div class = "colon-container"> 
-                <p3>.      .</p3>
-            </div>
-            <div class="number-box" id="box5"></div>
-            <div class="number-box" id="box6"></div>
         </div>
     </div>
 
-    
+    <div id="timerModal" class="timerModal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="closeTimer">&times;</span>
+            <h2>Set Timer</h2>
+            <p>Timer settings go here...</p>
+            <label for="timerHours">Hours:</label>
+            <select id="timerHours"></select>
+            <!-- Minute Dropdown -->
+            <label for="timerMinutes">Minutes:</label>
+            <select id="timerMinutes"></select>
+            <label for="timerSeconds">Seconds:</label>
+            <select id="timerSeconds"></select>
+            <button id="startTimerBtn">Start Timer</button>
+            <div id="displayArea"></div>
+            <div id="displayArea1">
+                <div class="number-boxes-container">
+                    <div class="number-box" id="box1"></div>
+                    <div class="number-box" id="box2"></div>
+                    <div class="colon-container"><p3>.      .</p3></div>
+                    <div class="number-box" id="box3"></div>
+                    <div class="number-box" id="box4"></div>
+                    <div class="colon-container"><p3>.      .</p3></div>
+                    <div class="number-box" id="box5"></div>
+                    <div class="number-box" id="box6"></div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div id="clockModal" class="clockModal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="closeClock">&times;</span>
-      <h2>Set Clock</h2>
-      <p>Clock settings go here...</p>
-      <!-- Add your alarm setting inputs and confirm button here -->
+    <div id="clockModal" class="clockModal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="closeClock">&times;</span>
+            <h2>Set Clock</h2>
+            <div id="clockDisplay">00:00:00</div>
+        </div>
     </div>
-  </div>
 
-  <div id="internationalModal" class="internationalModal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="closeInternational">&times;</span>
-      <h2>Set international clock</h2>
-      <p>Timer settings go here...</p>
-      <!-- Add your alarm setting inputs and confirm button here -->
+    <div id="internationalModal" class="internationalModal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="closeInternational">&times;</span>
+            <h2>Set international clock</h2>
+            <label for="cityName">Enter City Name:</label>
+            <input type="text" id="cityName" placeholder="e.g., London, Tokyo">
+            <button onclick="displayCityTime()">Show Local Time</button>
+            <div id="timeDisplay"></div>
+        </div>
     </div>
-  </div>
-
-  
 
     <footer>
         <div class="project-container">
             <div class="project-box">
                 <h3>Project 1: Alarm Clock</h3>
-                <p>This project uses Javascript to implement a clock where 
-                    you can set timers, alarms, and see a running real time 
+                <p>This project uses JavaScript to implement a clock where 
+                    you can set timers, alarms, and see a running real-time 
                     clock. I also used a timer API so a user can enter the 
                     name of a city and get back a clock showing the current 
-                    time in that time zone. Right below, you can choose the option that you want. </p>
-                    <div class="button-container">
-                        <button id="setAlarmBtn">Set Alarm</button>
-                        <button id="setTimerBtn">Set Timer</button>
-                        <button id="showClockBtn">Show Clock</button>
-                        <button id="showInternationalBtn">Show International</button>
-                      </div>
-
+                    time in that time zone. Right below, you can choose the option that you want.</p>
+                <div class="button-container">
+                    <button id="setAlarmBtn">Set Alarm</button>
+                    <button id="setTimerBtn">Set Timer</button>
+                    <button id="showClockBtn">Show Clock</button>
+                    <button id="showInternationalBtn">Show International</button>
+                </div>
             </div>
             <div class="project-box">
-                <h3>Project 2</h3>
-                <p>Description of project 2.</p>
-                <!-- You can also include an image or a link here -->
+                <h3>Project 2: Language Probability Checker</h3>
+                <p>This project takes a text input and calculates the probability that the text is in English or Spanish based on character probabilities.</p>
+                <textarea id="inputText" placeholder="Type your text here..." spellcheck="false"></textarea>
+                <button id="checkLanguageBtn">Check Language Probability</button>
+                <div id="result"></div>
             </div>
             <div class="project-box">
-                <h3>Project 3</h3>
-                <p>Description of project 3.</p>
-                <!-- You can also include an image or a link here -->
+                <h3>Project 3: Flappy Bird Game</h3>
+                <div id="score">Score: 0</div>
+                <canvas id="flappyBirdCanvas" width="320" height="480"></canvas>
+                <button class="circle-button" id="startGameBtn">Start</button>
+                <div id="gameOverModal" class="game-over-modal" style="display: none;">
+                    <div class="game-over-content">
+                        <p id="gameOverMessage"></p>
+                        <button id="restartGameOverBtn">Restart</button>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
