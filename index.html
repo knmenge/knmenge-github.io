@@ -4,25 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Title</title>
-    <!-- CSS files -->
-    <link rel="stylesheet" href="style.CSS">
-    <!-- JavaScript files -->
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <script src="languageChecker.js" defer></script> <!-- Add this line for the new functionality -->
 </head>
 <body>
     <header>
         <h1>Kristen Menge</h1>
-        <!-- Navigation, logo, etc. -->
     </header>
     <nav>
-        <!-- Main navigation links -->
     </nav>
     <div class="subheader">
         <h2>A Little About Me: </h2>
     </div>
     <main>
-        <!-- Main content -->
         <article>
             <p>My name is Kristen Menge, and I am a junior at UW Madison. 
                 I study Computer Engineering with a double major in Computer 
@@ -47,12 +41,9 @@
             </p>
             <h2> Relevant Coursework: </h2>
             <p> I have taken quite a few computer classes now. I have taken CS 200-400, which teaches all the basics of coding, object oriented programming like Java, and all the basic data structures.  </p>
-            <!-- Article or section content -->
         </article>
-        
         <aside>
             <img src="IMG_3200.jpg" alt="A brief description of the image">
-            <!-- Sidebar or additional information -->
             <div1> Skills: </div1>
             <div>Java, JavaScript, Python, HTML(obviously), C++, C, CSS, Matlab, Linux</div>
             <div1>Tools:</div1>
@@ -64,34 +55,29 @@
 
     <!-- The Modal -->
     <div id="alarmModal" class="alarmModal">
-        <!-- Modal content -->
         <div class="modal-content">
             <span class="closeAlarm">&times;</span>
             <h2>Set Alarm</h2>
             <p>Alarm settings go here...</p>
             <label for="alarmHours">Hours:</label>
             <select id="alarmHours"></select>
-            <!-- Minute Dropdown -->
             <label for="alarmMinutes">Minutes:</label>
             <select id="alarmMinutes"></select>
             <button id="startAlarmBtn">Start Alarm</button> 
             <div id="displayArea"></div>
             <div id="alarmInfoBar" style="display: none;">
-                <!-- Placeholder for alarm information -->
                 <p id="alarmInfoText">Alarm set for: <span id="alarmTimeDisplay"></span></p>
             </div>
         </div>
     </div>
 
     <div id="timerModal" class="timerModal">
-        <!-- Modal content -->
         <div class="modal-content">
             <span class="closeTimer">&times;</span>
             <h2>Set Timer</h2>
             <p>Timer settings go here...</p>
             <label for="timerHours">Hours:</label>
             <select id="timerHours"></select>
-            <!-- Minute Dropdown -->
             <label for="timerMinutes">Minutes:</label>
             <select id="timerMinutes"></select>
             <label for="timerSeconds">Seconds:</label>
@@ -114,7 +100,6 @@
     </div>
 
     <div id="clockModal" class="clockModal">
-        <!-- Modal content -->
         <div class="modal-content">
             <span class="closeClock">&times;</span>
             <h2>Set Clock</h2>
@@ -123,7 +108,6 @@
     </div>
 
     <div id="internationalModal" class="internationalModal">
-        <!-- Modal content -->
         <div class="modal-content">
             <span class="closeInternational">&times;</span>
             <h2>Set international clock</h2>
@@ -160,11 +144,11 @@
             <div class="project-box">
                 <h3>Project 3: Flappy Bird Game</h3>
                 <div id="score">Score: 0</div>
-                <canvas id="flappyBirdCanvas" width="320" height="480"></canvas>
-                <button class="circle-button" id="startGameBtn">Start</button>
-                <div id="gameOverModal" class="game-over-modal" style="display: none;">
+                <canvas id="flappyBirdCanvas" width="400" height="300"></canvas>
+                <button id="startGameBtn" class="circle-button">Start</button>
+                <div id="gameOverModal" class="game-over-modal">
                     <div class="game-over-content">
-                        <p id="gameOverMessage"></p>
+                        <p>You Lost! Your score was <span id="finalScore"></span></p>
                         <button id="restartGameOverBtn">Restart</button>
                     </div>
                 </div>
