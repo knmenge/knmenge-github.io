@@ -1,73 +1,154 @@
 /* Reset some basic elements */
-body, h1, h2, h3, p {
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: Georgia, serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
 }
 
 header {
-    background-color: #fff;
+    background-color: #333;
     color: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 0;
     text-align: center;
 }
 
 header h1 {
-    color: black;
-}
-
-div h2 {
-    color: black;
-    width: 100%;
-    padding-left: 40px;
+    margin: 0;
+    font-size: 2.5em;
 }
 
 nav {
+    background: #444;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
     display: flex;
     justify-content: center;
-    padding: 10px 0;
-    background: #444;
 }
 
-nav a {
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    font-size: 1.2em;
 }
 
-nav a:hover {
-    background-color: #555;
+nav ul li a:hover {
+    color: #ddd;
+}
+
+.subheader {
+    padding: 10px 0;
+    background: #eee;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subheader h2 {
+    font-size: 1.8em;
 }
 
 main {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px 20px 20px;
+}
+
+.content-wrapper {
+    display: flex;
     justify-content: space-between;
-    margin: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.content-box {
+    background-color: #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    flex: 3;
+    margin-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 article {
-    flex: 3;
-    padding-right: 20px;
+    margin-right: 20px;
 }
 
-.rectangle-container {
+article p {
+    margin-bottom: 20px;
+}
+
+aside {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+aside img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.project-container {
     display: flex;
-    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
 }
 
-.rectangle {
-    width: 5%;
-    height: 100px;
-    line-height: 90px;
-    background-color: white;
-    margin: 5px;
+.project-box {
+    background-color: #ccc;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .button-container {
@@ -79,193 +160,30 @@ article {
 .button-container button {
     padding: 10px 20px;
     cursor: pointer;
-}
-
-p {
-    padding-top: 20px;
-    text-indent: 30px;
-}
-
-p2 {
-    color: black;
-}
-
-p3 {
-    font-weight: bold;
-    padding-top: 10%;
-    font-size: 24px;
-}
-
-p4 {
-    padding-top: 2%;
-}
-
-div1 {
-    font-weight: bold;
-}
-
-img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 8px;
-}
-
-aside {
-    flex: 1;
-    padding-left: 20px;
-    background-color: #f4f4f4;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* The Modal (background) */
-.alarmModal, .timerModal, .clockModal, .internationalModal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-#alarmInfoBar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 5px solid black;
-    background-color: lightgrey;
-    height: 50px;
-}
-
-#clockDisplay {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 24px;
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-}
-
-.number-boxes-container {
-    display: none;
-    justify-content: center;
-    gap: 10px;
-}
-
-.number-box {
-    display: none;
-    width: 50px;
-    height: 100px;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    border: 1px solid #ccc;
-    margin-top: 5%;
-}
-
-.number-boxes-container1 {
-    display: none;
-    justify-content: center;
-    gap: 2px;
-}
-
-.number-box1 {
-    display: none;
-    width: 10px;
-    height: 20px;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    margin-top: 2%;
-}
-
-/* The Close Button */
-.closeAlarm, .closeClock, .closeTimer, .closeInternational {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.closeAlarm:hover, .closeClock:hover, .closeTimer:hover, .closeInternational:hover,
-.closeAlarm:focus, .closeClock:focus, .closeTimer:focus, .closeInternational:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Projects and Flappy Bird Game Styling */
-.project-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0;
-}
-
-.project-box {
-    background-color: #333;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px 20px;
     background-color: #007BFF;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
+    font-size: 1em;
 }
 
-button.circle-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.button-container button:hover {
+    background-color: #0056b3;
+}
+
+.styled-button {
+    padding: 10px 20px;
+    cursor: pointer;
     background-color: #007BFF;
-    color: #fff;
+    color: white;
     border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    text-align: center;
-    margin: 10px auto; /* Center horizontally */
+    border-radius: 4px;
+    font-size: 1em;
+    display: block;
+    margin: 20px auto;
 }
 
-button.circle-button:hover {
+.styled-button:hover {
     background-color: #0056b3;
 }
 
@@ -276,6 +194,7 @@ textarea {
     border-radius: 4px;
     resize: vertical;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 #result {
@@ -285,6 +204,7 @@ textarea {
     border: 1px solid #ddd;
     border-radius: 4px;
     max-width: 100%;
+    color: #333;
     word-wrap: break-word;
 }
 
@@ -302,17 +222,17 @@ canvas {
     margin-bottom: 10px;
 }
 
-/* Game Over Modal Styling */
 .game-over-modal {
     position: absolute;
+    top: 420%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     z-index: 10;
-    margin-left: 175px;
-    margin-top: -210px;
     display: none;
 }
 
@@ -326,7 +246,7 @@ canvas {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #007BFF;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -335,3 +255,33 @@ canvas {
 #restartGameOverBtn:hover {
     background-color: #0056b3;
 }
+
+.mute-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.circle-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px auto; /* Center horizontally */
+}
+
+.circle-button:hover {
+    background-color: #0056b3;
+}
+
