@@ -212,7 +212,6 @@ canvas {
     display: block;
     margin: 10px auto;
     border: 1px solid #000;
-    background: url('path-to-your-image.jpg') no-repeat center center;
     background-size: cover;
 }
 
