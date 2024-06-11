@@ -3,130 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Title</title>
+    <title>Kristen Menge's Portfolio</title>
     <link rel="stylesheet" href="style.CSS">
-    <script src="script.js" defer></script>
+    <script src="js/alarm.js" defer></script>
+    <script src="js/timer.js" defer></script>
+    <script src="js/clock.js" defer></script>
+    <script src="js/international.js" defer></script>
+    <script src="js/spanglish.js" defer></script>
+    <script src="js/flappyBird.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Kristen Menge</h1>
     </header>
     <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
     <div class="subheader">
-        <h2>A Little About Me: </h2>
+       
     </div>
     <main>
-        <article>
-            <p>My name is Kristen Menge, and I am a junior at UW Madison. 
-                I study Computer Engineering with a double major in Computer 
-                Science, and a certificate in math. I am expecting to graduate 
-                in May 2025, and start work full time immediately after. I am 
-                from Madison, WI, and liked the city so much that I ended up 
-                going to college here. 
-                I have a passion for traveling, and over the winter I got to 
-                go to my 17th country, Colombia! I spent my last summer solo 
-                backpacking through europe, meeting incredible people and making
-                wonderful memories. I love learning new languages (both linguistic 
-                and computer :) ). I have studied Spanish for years, took French 
-                for 5 years, and love to study many others on duolingo from 
-                time to time.
-            </p>
-            <h2> Education: </h2>
-            <p>
-                As mentioned above, I am attending UW Madison, I have always been interested in computers, and I switched into
-                computer engineering / science after my first semester in school. 
-                I've done many projects for school, and a few smaller ones on my 
-                own, a few of which I have examples of below.
-            </p>
-            <h2> Relevant Coursework: </h2>
-            <p> I have taken quite a few computer classes now. I have taken CS 200-400, which teaches all the basics of coding, object oriented programming like Java, and all the basic data structures.  </p>
-        </article>
-        <aside>
-            <img src="IMG_3200.jpg" alt="A brief description of the image">
-            <div1> Skills: </div1>
-            <div>Java, JavaScript, Python, HTML(obviously), C++, C, CSS, Matlab, Linux</div>
-            <div1>Tools:</div1>
-            <div>Eclipse, IntelliJ, Visual Studio Code, Github, ModelSim</div>
-            <div1>Clubs:</div1>
-            <div>Kappa Eta Kappa (professional engineering fraternity), Cybersecurity Club, SWE (Society of Women Engineers)</div>
-        </aside>
-    </main>
-
-    <!-- The Modal -->
-    <div id="alarmModal" class="alarmModal">
-        <div class="modal-content">
-            <span class="closeAlarm">&times;</span>
-            <h2>Set Alarm</h2>
-            <p>Alarm settings go here...</p>
-            <label for="alarmHours">Hours:</label>
-            <select id="alarmHours"></select>
-            <label for="alarmMinutes">Minutes:</label>
-            <select id="alarmMinutes"></select>
-            <button id="startAlarmBtn">Start Alarm</button> 
-            <div id="displayArea"></div>
-            <div id="alarmInfoBar" style="display: none;">
-                <p id="alarmInfoText">Alarm set for: <span id="alarmTimeDisplay"></span></p>
+        <div class="content-wrapper">
+            <div class="content-box">
+                <article id="about">
+                    <h2>A Little About Me</h2>
+                    <p>Hello! My name is Kristen Menge, and I am about to enter my senior year at UW Madison, where I am pursuing a double major in Computer Engineering and Computer Science. I am excited to graduate next spring and embark on my professional journey. Beyond academics, I have a passion for travel and have had the incredible opportunity to visit 17 countries. My love for exploration extends to languages as well; I enjoy learning new languages, both spoken and programming. This diverse set of interests has equipped me with a well-rounded perspective and a continuous drive to learn and innovate.</p>
+                    <h2>Education</h2>
+                    <p>I am currently attending UW Madison. I switched to computer engineering and science after my first semester and have completed many projects for school and a few smaller ones on my own. Below are examples of some of these projects.</p>
+                    <h2>Relevant Coursework</h2>
+                    <p>I have taken numerous computer science classes, including CS 200-400, covering basics of coding, object-oriented programming, and essential data structures.</p>
+                </article>
             </div>
-        </div>
-    </div>
-
-    <div id="timerModal" class="timerModal">
-        <div class="modal-content">
-            <span class="closeTimer">&times;</span>
-            <h2>Set Timer</h2>
-            <p>Timer settings go here...</p>
-            <label for="timerHours">Hours:</label>
-            <select id="timerHours"></select>
-            <label for="timerMinutes">Minutes:</label>
-            <select id="timerMinutes"></select>
-            <label for="timerSeconds">Seconds:</label>
-            <select id="timerSeconds"></select>
-            <button id="startTimerBtn">Start Timer</button>
-            <div id="displayArea"></div>
-            <div id="displayArea1">
-                <div class="number-boxes-container">
-                    <div class="number-box" id="box1"></div>
-                    <div class="number-box" id="box2"></div>
-                    <div class="colon-container"><p3>.      .</p3></div>
-                    <div class="number-box" id="box3"></div>
-                    <div class="number-box" id="box4"></div>
-                    <div class="colon-container"><p3>.      .</p3></div>
-                    <div class="number-box" id="box5"></div>
-                    <div class="number-box" id="box6"></div>
+            <aside>
+                <img src="img_aud_txt_files/IMG_3200.jpg" alt="Kristen Menge">
+                <div class="info-section">
+                    <div class="info-title">Skills:</div>
+                    <div>Java, JavaScript, Python, HTML, C++, C, CSS, Matlab, Linux</div>
                 </div>
-            </div>
+                <div class="info-section">
+                    <div class="info-title">Tools:</div>
+                    <div>Eclipse, IntelliJ, Visual Studio Code, Github, ModelSim</div>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">Clubs:</div>
+                    <div>Kappa Eta Kappa (professional engineering fraternity), Cybersecurity Club, SWE (Society of Women Engineers)</div>
+                </div>
+            </aside>
         </div>
-    </div>
-
-    <div id="clockModal" class="clockModal">
-        <div class="modal-content">
-            <span class="closeClock">&times;</span>
-            <h2>Set Clock</h2>
-            <div id="clockDisplay">00:00:00</div>
-        </div>
-    </div>
-
-    <div id="internationalModal" class="internationalModal">
-        <div class="modal-content">
-            <span class="closeInternational">&times;</span>
-            <h2>Set international clock</h2>
-            <label for="cityName">Enter City Name:</label>
-            <input type="text" id="cityName" placeholder="e.g., London, Tokyo">
-            <button onclick="displayCityTime()">Show Local Time</button>
-            <div id="timeDisplay"></div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="project-container">
+        <section id="projects" class="project-container">
             <div class="project-box">
                 <h3>Project 1: Alarm Clock</h3>
-                <p>This project uses JavaScript to implement a clock where 
-                    you can set timers, alarms, and see a running real-time 
-                    clock. I also used a timer API so a user can enter the 
-                    name of a city and get back a clock showing the current 
-                    time in that time zone. Right below, you can choose the option that you want.</p>
+                <p>This project is an alarm clock application built using HTML, CSS, and JavaScript. It allows users to set timers, alarms, and view a real-time clock. Additionally, users can enter the name of a city to display the current time in that location, using a time zone API to fetch the data. The interface includes modals for setting alarms and timers, with options to specify hours, minutes, and seconds. This project demonstrates my skills in creating interactive user interfaces, handling asynchronous API calls, and managing state in a web application. By using JavaScript, I implemented the logic for real-time updates, alarm scheduling, and time zone conversions. This project showcases my ability to integrate third-party APIs, manage dynamic content updates, and create a seamless user experience.</p>
                 <div class="button-container">
                     <button id="setAlarmBtn">Set Alarm</button>
                     <button id="setTimerBtn">Set Timer</button>
@@ -136,15 +67,17 @@
             </div>
             <div class="project-box">
                 <h3>Project 2: Language Probability Checker</h3>
-                <p>This project takes a text input and calculates the probability that the text is in English or Spanish based on character probabilities.</p>
+                <p>This project is a language probability checker that determines whether a given text is more likely to be in English or Spanish. Built using HTML, CSS, JavaScript, and Python with Flask, it allows users to input text and click a button to check the language probability. The text is sent to a server where it is analyzed based on the frequency of each letter compared to typical frequencies in English and Spanish. The server returns the probabilities of the text being in each language, which are then displayed to the user. This project demonstrates my ability to create interactive web applications, handle server-client communication, and perform basic text analysis. It highlights my skills in using JavaScript for sending requests and updating the webpage, and Python with Flask for processing data on the server. This project showcases my ability to integrate front-end and back-end technologies to create a functional and user-friendly application.</p>
                 <textarea id="inputText" placeholder="Type your text here..." spellcheck="false"></textarea>
-                <button id="checkLanguageBtn">Check Language Probability</button>
+                <button id="checkLanguageBtn" class="styled-button">Check Language Probability</button>
                 <div id="result"></div>
             </div>
             <div class="project-box">
                 <h3>Project 3: Flappy Bird Game</h3>
+                <p>This project is a recreation of the popular Flappy Bird game using HTML5 Canvas and JavaScript. Players control a bird navigating through gaps in pipes, featuring a scoring system, sound effects, and a mute/unmute button. The game demonstrates my understanding of gravity, collision detection, and score tracking. I used event listeners to handle user inputs and the HTML5 Canvas API for smooth graphics and animations. Audio feedback enhances the user experience, and the interface includes a start button, game-over modal, and a mute/unmute button. This project showcases my skills in creating interactive web applications, handling real-time user input, and implementing game logic.</p>
                 <div id="score">Score: 0</div>
                 <canvas id="flappyBirdCanvas" width="400" height="300"></canvas>
+                <button id="muteButton" class="mute-button"></button>
                 <button id="startGameBtn" class="circle-button">Start</button>
                 <div id="gameOverModal" class="game-over-modal">
                     <div class="game-over-content">
@@ -153,7 +86,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <p>Contact me at: <a href="mailto:knmenge@gmail.com">knmenge@gmail.com</a> | Phone: (608) 520-5499</p>
     </footer>
 </body>
 </html>
