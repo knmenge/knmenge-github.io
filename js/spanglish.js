@@ -1,4 +1,4 @@
-const apiUrl = 'https://your-render-app.onrender.com/api/language-probability';
+const apiUrl = 'https://portfolio-backend-b61s.onrender.com/check_language';
 
 
 document.addEventListener('DOMContentLoaded', () => {
