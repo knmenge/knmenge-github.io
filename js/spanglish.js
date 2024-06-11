@@ -1,6 +1,5 @@
 const apiUrl = 'https://portfolio-backend-b61s.onrender.com/check_language';
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const checkLanguageBtn = document.getElementById('checkLanguageBtn');
     const resultDiv = document.getElementById('result');
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log('Input Text:', inputText); // Log the input text to verify it
 
-        fetch('http://127.0.0.1:5000/check_language', {
+        fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,3 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
