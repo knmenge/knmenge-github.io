@@ -1,3 +1,6 @@
+const apiUrl = 'https://your-render-app.onrender.com/api/language-probability';
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const checkLanguageBtn = document.getElementById('checkLanguageBtn');
     const resultDiv = document.getElementById('result');
