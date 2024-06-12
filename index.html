@@ -15,28 +15,23 @@
 <body>
     <header>
         <h1>Kristen Menge</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="subheader">
-       
-    </div>
     <main>
-        <div class="content-wrapper">
+        <section id="about" class="content-wrapper">
             <div class="content-box">
-                <article id="about">
-                    <h2>A Little About Me</h2>
-                    <p>Hello! My name is Kristen Menge, and I am about to enter my senior year at UW Madison, where I am pursuing a double major in Computer Engineering and Computer Science. I am excited to graduate next spring and embark on my professional journey. Beyond academics, I have a passion for travel and have had the incredible opportunity to visit 17 countries. My love for exploration extends to languages as well; I enjoy learning new languages, both spoken and programming. This diverse set of interests has equipped me with a well-rounded perspective and a continuous drive to learn and innovate.</p>
-                    <h2>Education</h2>
-                    <p>I am currently attending UW Madison. I switched to computer engineering and science after my first semester and have completed many projects for school and a few smaller ones on my own. Below are examples of some of these projects.</p>
-                    <h2>Relevant Coursework</h2>
-                    <p>I have taken numerous computer science classes, including CS 200-400, covering basics of coding, object-oriented programming, and essential data structures.</p>
-                </article>
+                <h2>A Little About Me</h2>
+                <p>Hello! My name is Kristen Menge, and I am about to enter my senior year at UW Madison, where I am pursuing a double major in Computer Engineering and Computer Science. I am excited to graduate next spring and embark on my professional journey. Beyond academics, I have a passion for travel and have had the incredible opportunity to visit 17 countries. My love for exploration extends to languages as well; I enjoy learning new languages, both spoken and programming. This diverse set of interests has equipped me with a well-rounded perspective and a continuous drive to learn and innovate.</p>
+                <h2>Education</h2>
+                <p>I am currently attending UW Madison. I switched to computer engineering and science after my first semester and have completed many projects for school and a few smaller ones on my own. Below are examples of some of these projects.</p>
+                <h2>Relevant Coursework</h2>
+                <p>I have taken numerous computer science classes, including CS 200-400, covering basics of coding, object-oriented programming, and essential data structures.</p>
             </div>
             <aside>
                 <img src="img_aud_txt_files/IMG_3200.jpg" alt="Kristen Menge">
@@ -53,7 +48,7 @@
                     <div>Kappa Eta Kappa (professional engineering fraternity), Cybersecurity Club, SWE (Society of Women Engineers)</div>
                 </div>
             </aside>
-        </div>
+        </section>
         <section id="projects" class="project-container">
             <div class="project-box">
                 <h3>Project 1: Alarm Clock</h3>
@@ -82,14 +77,71 @@
                 <div id="gameOverModal" class="game-over-modal">
                     <div class="game-over-content">
                         <p>You Lost! Your score was <span id="finalScore"></span></p>
-                        <button id="restartGameOverBtn">Restart</button>
+                        <button id="restartGameOverBtn" class="modal-button">Restart</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Alarm Modal -->
+    <div id="alarmModal" class="modal">
+        <div class="modal-content">
+            <span class="closeAlarm">&times;</span>
+            <h2>Set Alarm</h2>
+            <label for="alarmHours">Hours:</label>
+            <select id="alarmHours"></select>
+            <label for="alarmMinutes">Minutes:</label>
+            <select id="alarmMinutes"></select>
+            <button id="startAlarmBtn" class="modal-button">Start Alarm</button>
+            <div id="alarmInfoBar" style="display: none;">
+                <p id="alarmInfoText">Alarm set for: <span id="alarmTimeDisplay"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timer Modal -->
+    <div id="timerModal" class="modal">
+        <div class="modal-content">
+            <span class="closeTimer">&times;</span>
+            <h2>Set Timer</h2>
+            <label for="timerHours">Hours:</label>
+            <select id="timerHours"></select>
+            <label for="timerMinutes">Minutes:</label>
+            <select id="timerMinutes"></select>
+            <label for="timerSeconds">Seconds:</label>
+            <select id="timerSeconds"></select>
+            <button id="startTimerBtn" class="modal-button">Start Timer</button>
+            <div id="timerInfoBar" style="display: none;">
+                <p id="timerInfoText">Timer set for: <span id="timerTimeDisplay"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clock Modal -->
+    <div id="clockModal" class="modal">
+        <div class="modal-content">
+            <span class="closeClock">&times;</span>
+            <h2>Current Time</h2>
+            <div id="clockDisplay">00:00:00</div>
+        </div>
+    </div>
+
+    <!-- International Time Modal -->
+    <div id="internationalModal" class="modal">
+        <div class="modal-content">
+            <span class="closeInternational">&times;</span>
+            <h2>Set International Clock</h2>
+            <label for="cityName">Enter City Name:</label>
+            <input type="text" id="cityName" placeholder="e.g., London, Tokyo">
+            <button onclick="displayCityTime()" class="modal-button">Show Local Time</button>
+            <div id="timeDisplay"></div>
+        </div>
+    </div>
+
     <footer id="contact">
         <p>Contact me at: <a href="mailto:knmenge@gmail.com">knmenge@gmail.com</a> | Phone: (608) 520-5499</p>
     </footer>
 </body>
 </html>
+
