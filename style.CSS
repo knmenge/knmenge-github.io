@@ -291,7 +291,7 @@ canvas {
 
 .game-over-modal {
     position: absolute;
-    top: 420%;
+    top: 410%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
@@ -302,7 +302,6 @@ canvas {
     z-index: 10;
     display: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    animation: showModal 0.3s ease-in-out;
 }
 
 .game-over-content {
