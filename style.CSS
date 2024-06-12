@@ -151,6 +151,59 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: showModal 0.3s ease-in-out;
+}
+
+@keyframes showModal {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Close Button */
+.closeAlarm, .closeTimer, .closeClock, .closeInternational {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeAlarm:hover, .closeTimer:hover, .closeClock:hover, .closeInternational:hover,
+.closeAlarm:focus, .closeTimer:focus, .closeClock:focus, .closeInternational:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -185,6 +238,21 @@ footer a:hover {
 
 .styled-button:hover {
     background-color: #0056b3;
+}
+
+.modal-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.modal-button:hover {
+    background-color: #218838;
 }
 
 textarea {
@@ -223,7 +291,7 @@ canvas {
 
 .game-over-modal {
     position: absolute;
-    top: 420%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
@@ -233,6 +301,8 @@ canvas {
     text-align: center;
     z-index: 10;
     display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: showModal 0.3s ease-in-out;
 }
 
 .game-over-content {
