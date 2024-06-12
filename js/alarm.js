@@ -1,16 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const alarmModal = document.getElementById('alarmModal');
     const setAlarmBtn = document.getElementById('setAlarmBtn');
+    const alarmModal = document.getElementById('alarmModal');
     const closeAlarmSpan = document.getElementsByClassName('closeAlarm')[0];
     const startAlarmBtn = document.getElementById('startAlarmBtn');
     const alarmInfoBar = document.getElementById('alarmInfoBar');
     const alarmTimeDisplay = document.getElementById('alarmTimeDisplay');
-    const alarmSound = new Audio('./img_aud_txt_files/alarm.wav'); // Adjust the path if necessary
+    
+    // Create an audio object for the alarm sound
+    const alarmSound = new Audio('./img_aud_txt_files/alarm.wav');
 
     function populateTimeDropdowns() {
         const alarmHoursDropdown = document.getElementById('alarmHours');
         const alarmMinutesDropdown = document.getElementById('alarmMinutes');
-
         populateDropdown(alarmHoursDropdown, 24);
         populateDropdown(alarmMinutesDropdown, 60);
     }
@@ -26,10 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function setAlarm() {
-        console.log("Setting an alarm...");
-    }
-
     setAlarmBtn.onclick = function () {
         populateTimeDropdowns();
         alarmModal.style.display = "block";
@@ -40,35 +37,37 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     startAlarmBtn.onclick = function () {
-        getAlarmInfo();
+        setAlarm();
     };
 
-    function getAlarmInfo() {
+    function setAlarm() {
         const alarmHours = parseInt(document.getElementById('alarmHours').value, 10);
         const alarmMinutes = parseInt(document.getElementById('alarmMinutes').value, 10);
-        alarmInfoBar.style.display = 'block';
-        alarmTimeDisplay.textContent = alarmHours.toString().padStart(2, '0') + ":" + alarmMinutes.toString().padStart(2, '0') + " o'clock";
-        startAlarm(alarmHours, alarmMinutes);
-    }
-
-    function startAlarm(hours, minutes) {
         const now = new Date();
         const alarmTime = new Date();
-        alarmTime.setHours(hours);
-        alarmTime.setMinutes(minutes);
+        alarmTime.setHours(alarmHours);
+        alarmTime.setMinutes(alarmMinutes);
         alarmTime.setSeconds(0);
-        
-        const timeToAlarm = alarmTime.getTime() - now.getTime();
-        
-        if (timeToAlarm > 0) {
-            setTimeout(() => {
-                showAlarmPopup();
-                alarmSound.play();
-            }, timeToAlarm);
+
+        // If the alarm time is before the current time, set it for the next day
+        if (alarmTime <= now) {
+            alarmTime.setDate(alarmTime.getDate() + 1);
         }
+
+        alarmInfoBar.style.display = 'block';
+        alarmTimeDisplay.textContent = `Alarm set for ${alarmTime.toLocaleTimeString()}`;
+
+        // Check every second if the current time matches the alarm time
+        const alarmInterval = setInterval(() => {
+            const currentTime = new Date();
+            if (currentTime >= alarmTime) {
+                clearInterval(alarmInterval);
+                triggerAlarm();
+            }
+        }, 1000);
     }
 
-    function showAlarmPopup() {
+    function triggerAlarm() {
         const alarmPopup = document.createElement('div');
         alarmPopup.style.position = 'fixed';
         alarmPopup.style.top = '50%';
@@ -83,8 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.body.appendChild(alarmPopup);
 
+        // Play the alarm sound
+        alarmSound.play();
+
         setTimeout(() => {
             document.body.removeChild(alarmPopup);
         }, 5000);
     }
 });
+
